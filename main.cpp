@@ -51,11 +51,13 @@ int main()
     auto *layer5_3 = new sv::MaxPoolLayer<double>(2, 2); // 7 x 7 x 512
     network.addLayer(layer5_3);
                                                                                                                                                           auto *layer6_1 = new sv::FCLayer<double>(16 * 16 * 32, 4096); // 1 x 1 x 4096
+     auto *layer6_1 = new sv::FCLayer<double>(16 * 16 * 32, 4096); // 1 x 1 x 4096
     network.addLayer(layer6_1);
     auto *layer6_2 = new sv::FCLayer<double>(4096, 4096); // 1 x 1 x 4096
     network.addLayer(layer6_2);
     auto *layer6_3 = new sv::FCLayer<double>(4096, 1000); // 1 x 1 x 1000
     network.addLayer(layer6_3);
+
     // predict the result by forwarding
     sv::Tensor<double> output;
     network.predict(input, output);
