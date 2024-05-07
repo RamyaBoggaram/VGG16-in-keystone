@@ -18,7 +18,7 @@ int main()
 //#endif
 
     // prepare the input data
-    auto input = sv::Tensor<double>(224, 224, 3); // 224 x 224 x 3
+    auto input = sv::Tensor<double>(128, 128, 3); // 224 x 224 x 3
     input.randam();
 
     // prepare the network
