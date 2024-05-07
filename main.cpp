@@ -32,35 +32,35 @@ int main()
     auto *layer1_3 = new sv::MaxPoolLayer<double>(2, 2); // 112 x 112 x 64
     network.addLayer(layer1_3);
 
-    auto *layer2_1 = new sv::ConvLayer<double>(8, 3, 64); // 112 x 112 x 128
+    auto *layer2_1 = new sv::ConvLayer<double>(8, 3, 32); // 112 x 112 x 128
     network.addLayer(layer2_1);
-    auto *layer2_2 = new sv::ConvLayer<double>(64, 3, 64); // 112 x 112 x 128
+    auto *layer2_2 = new sv::ConvLayer<double>(32, 3, 32); // 112 x 112 x 128
     network.addLayer(layer2_2);
     auto *layer2_3 = new sv::MaxPoolLayer<double>(2, 2); // 56 x 56 x 128
     network.addLayer(layer2_3);
 
-    auto *layer3_1 = new sv::ConvLayer<double>(64, 3, 128); // 56 x 56 x 256
+    auto *layer3_1 = new sv::ConvLayer<double>(32, 3, 64); // 56 x 56 x 256
     network.addLayer(layer3_1);
-    auto *layer3_2 = new sv::ConvLayer<double>(128, 3, 128); // 56 x 56 x 256
+    auto *layer3_2 = new sv::ConvLayer<double>(64, 3, 64); // 56 x 56 x 256
     network.addLayer(layer3_2);
     auto *layer3_3 = new sv::MaxPoolLayer<double>(2, 2); // 28 x 28 x 256
     network.addLayer(layer3_3);
 
-    auto *layer4_1 = new sv::ConvLayer<double>(128, 3, 256); // 28 x 28 x 512
+    auto *layer4_1 = new sv::ConvLayer<double>(64, 3, 128); // 28 x 28 x 512
     network.addLayer(layer4_1);
-    auto *layer4_2 = new sv::ConvLayer<double>(256, 3, 256); // 28 x 28 x 512
+    auto *layer4_2 = new sv::ConvLayer<double>(128, 3, 128); // 28 x 28 x 512
     network.addLayer(layer4_2);
     auto *layer4_3 = new sv::MaxPoolLayer<double>(2, 2); // 14 x 14 x 512
     network.addLayer(layer4_3);
 
-    auto *layer5_1 = new sv::ConvLayer<double>(256, 3, 256); // 14 x 14 x 512
+    auto *layer5_1 = new sv::ConvLayer<double>(128, 3, 128); // 14 x 14 x 512
     network.addLayer(layer5_1);
-    auto *layer5_2 = new sv::ConvLayer<double>(256, 3, 256); // 14 x 14 x 512
+    auto *layer5_2 = new sv::ConvLayer<double>(128, 3, 128); // 14 x 14 x 512
     network.addLayer(layer5_2);
     auto *layer5_3 = new sv::MaxPoolLayer<double>(2, 2); // 7 x 7 x 512
     network.addLayer(layer5_3);
 
-    auto *layer6_1 = new sv::FCLayer<double>(7 * 7 * 256, 4096); // 1 x 1 x 4096
+    auto *layer6_1 = new sv::FCLayer<double>(7 * 7 * 128, 4096); // 1 x 1 x 4096
     network.addLayer(layer6_1);
     auto *layer6_2 = new sv::FCLayer<double>(4096, 4096); // 1 x 1 x 4096
     network.addLayer(layer6_2);
